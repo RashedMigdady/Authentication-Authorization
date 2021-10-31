@@ -7,10 +7,12 @@ app.use(express.json());
 
 app.use(cors());
 const connection  = require('./DB/DB');
+const RegisterRouter = require('./routers/routes/signUp');
 
 
 
 
+app.use('/register' , RegisterRouter);
 
 
 const PORT = process.env.PORT || 5000;
