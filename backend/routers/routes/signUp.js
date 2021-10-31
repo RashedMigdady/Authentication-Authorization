@@ -3,6 +3,6 @@ const { signUp } = require("../controllers/auth/signUp");
 
 const RegisterRouter = express.Router();
 
-RegisterRouter.post('/' , signUp);
+RegisterRouter.post("/", signUp);
 
 module.exports = RegisterRouter;
