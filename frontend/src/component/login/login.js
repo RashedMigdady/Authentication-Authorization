@@ -21,7 +21,7 @@ export const Login = () => {
         history.push('/users');
       } else{
 
-      history.push('/info')
+      history.push('/info');
 
       }  
       
