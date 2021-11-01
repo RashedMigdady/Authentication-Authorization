@@ -27,8 +27,14 @@ const login = (req, res) => {
           const options = {
             expiresIn:"100h"
           }
-          const token = jwt.sign(payload , process.env.SECRET , options)
-        res.status(200).json({ message: "you are logged!" ,token:token });
+          const token = await jwt.sign(payload , process.env.SECRET , options)
+          
+        res.status(200).json({
+          success: true,
+          message: `Email and Password are correct`,
+          token: token,
+          role:result[0].role
+        });
       }
     } catch (error) {
       res.status(404).json({ Error: error });

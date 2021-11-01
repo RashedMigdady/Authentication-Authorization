@@ -4,6 +4,6 @@ const authentication = require("../middleware/authentication");
 
 const usersRouter = express.Router();
 
-usersRouter.get('/' , authentication,getAllUsers);
+usersRouter.get('/' ,getAllUsers);
 
 module.exports = usersRouter;

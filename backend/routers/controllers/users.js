@@ -6,7 +6,7 @@ const getAllUsers = (req , res)=>{
     connection.query(query , (err , users)=>{
         if (err) return res.status(404).json({Error:err})
 
-        res.status(200).json(users);
+        res.status(200).json({users,});
     })
 }
 

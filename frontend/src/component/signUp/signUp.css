@@ -1,0 +1,18 @@
+.ContainerSignUp{
+    width:400px ;
+    height: 600px;
+    border: solid black 3px;
+    margin: auto;
+    display: grid;
+    /* background-color: blue; */
+    margin-top:  50px;
+    padding: 25px;
+}
+
+.text-muted{
+    margin-left: 40%;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+
+}
