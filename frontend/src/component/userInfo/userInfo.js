@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import './userInfo.css'
 
 export const UserInfo = ()=>{
     const [userInfo , setUserInfo] = useState("");
@@ -15,7 +16,12 @@ export const UserInfo = ()=>{
               console.log(err);
           })
      }, [])
-    return(<div>
-        {userInfo && userInfo.firstName +" "+userInfo.lastName}
+    return(<div >
+        <div className="profile">
+        <p>{userInfo && userInfo.firstName +" "+userInfo.lastName}</p>
+        <p>{userInfo && userInfo.email}</p>
+        <p>{userInfo && userInfo.role}</p>
+                
+        </div>
     </div>)
 }

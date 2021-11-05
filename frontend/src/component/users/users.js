@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import './users.css'
 
 
 
@@ -17,10 +18,14 @@ export const Users = ()=>{
 
 
 
-    return(<div>
+    return(<div className="card">
 
         {users && users.map((element , index)=>{
-            return (<p key={index}>{element.firstName}</p>)
+            return (<div key={index} className="oneCard">
+                <p >Name : {element && element.firstName + " " + element.lastName}</p>
+                <p> Email : {element && element.email}</p>
+
+            </div>)
         })}
 
 

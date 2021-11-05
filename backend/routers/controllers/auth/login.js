@@ -3,8 +3,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("dotenv").config();
 const login = (req, res) => {
-  const { email, password } = req.body;
-
+  const password = req.body.password;
+  const email = req.body.email.toLowerCase();
+  
   const query = `SELECT * FROM users WHERE email ='${email}'`;
 
   connection.query(query, async (err, result) => {

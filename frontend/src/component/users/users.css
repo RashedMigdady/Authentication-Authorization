@@ -1,0 +1,22 @@
+.card {
+  width: 90%;
+  /* background-color: white; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 70px auto;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+}
+
+.oneCard {
+  /* border: solid red 1px; */
+  margin: 10px;
+  height: 300px;
+  width: 350px;
+  background-color: #ececec;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
+}

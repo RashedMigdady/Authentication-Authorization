@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import "./login.css";
+import { BsEye, BsEyeSlash } from "react-icons/all";
+
 export const Login = () => {
   const [email , setEmail] =useState("");
   const [password , setPassword] = useState("");
   const history = useHistory();
+  const [showPassword, setShowPassword] = useState(false);
+
 
 
 
@@ -45,20 +49,36 @@ export const Login = () => {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" onChange={(event)=>{setPassword(event.target.value)}} />
+            <Form.Control type={showPassword ? "text" : "password"} placeholder="Password" onChange={(event)=>{setPassword(event.target.value)}} />
+            <i
+              style={{
+                marginLeft: "320px",
+                marginTop: "-33px",
+                position: "absolute",
+              }}
+              onClick={(e) => {
+                setShowPassword(!showPassword);
+              }}
+            >
+              {showPassword ? <BsEyeSlash /> : <BsEye />}
+            </i>
           </Form.Group>
           <Form.Group
             className="mb-3"
             controlId="formBasicCheckbox"
           ></Form.Group>
           <Button
-            variant="primary"
+            variant="outline-primary"
             type="submit"
             style={{ marginLeft: "150px" }} onClick={login}
           >
             Login
           </Button>
+          <div style={{display:"flex" , gap:"10px" , marginLeft:"40%" , marginTop:"15%"}}>
+         <p>or  </p><p onClick={()=>{history.push('/register')}} style={{color:"lightblue"}}> sign up</p>
+          </div>
         </Form>
+        {/* <Button variant="outline-primary">google</Button> */}
       </div>
     </>
   );

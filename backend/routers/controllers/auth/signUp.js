@@ -2,10 +2,10 @@ const connection = require("../../../DB/DB");
 const bcrypt = require("bcrypt");
 
 const signUp = async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+  let { firstName, lastName, email, password } = req.body;
 
   const hashPassword = await bcrypt.hash(password, 10);
-
+  email = email.toLowerCase();
   const query = `INSERT INTO users (firstName , lastName , email , password ) VALUES (?,?,?,?)`;
   date = [firstName, lastName, email, hashPassword];
   connection.query(query, date, (err, result) => {

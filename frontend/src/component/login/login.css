@@ -1,10 +1,11 @@
 .containerLogin{
     width:400px ;
     height: 600px;
-    border: solid black 3px;
+    border: solid rgb(81, 136, 255) 3px;
+    border-radius: 5px;
     margin: auto;
     display: grid;
-    /* background-color: blue; */
     margin-top:  50px;
+    padding: 25px;
 
 }
